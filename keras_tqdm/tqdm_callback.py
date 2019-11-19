@@ -85,6 +85,7 @@ class TQDMCallback(Callback):
         self.mode = 0  # samples
         if 'samples' in self.params:
             self.inner_total = self.params['samples']
+            self.mode = 1  # hack because the number of samples might be the number of steps in tf 2
         elif 'nb_sample' in self.params:
             self.inner_total = self.params['nb_sample']
         else:
